@@ -5,10 +5,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => '127.0.0.1',
 	'username' => 'root',
-	'password' => '',
-	'database' => 'club',
+	'password' => 'root',
+	'database' => 'chenjp',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
