@@ -1,0 +1,2 @@
+ERROR - 2016-10-08 08:57:41 --> Severity: Notice --> Undefined variable: data C:\wamp\www\chenjp\views\index\pwd.html 134
+ERROR - 2016-10-08 08:59:11 --> Severity: Notice --> Undefined variable: res C:\wamp\www\chenjp\app\index\controllers\Index.php 15

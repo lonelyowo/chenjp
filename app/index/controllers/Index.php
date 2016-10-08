@@ -11,7 +11,13 @@ class Index extends CI_Controller {
 
 	public function index()
 	{
-        $res = $this->Index_model->get_account();
-	    var_dump($res);
+        $data['data'] = $this->Index_model->get_account();
+        // var_dump($data['data']);exit();
+		$this->load->view('pwd.html',$data);
 	}
+
+	public function test()
+	{
+	}
+
 }
