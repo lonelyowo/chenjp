@@ -23,14 +23,16 @@
 	   fileElementId : id,
 	   dataType : 'json',
 	   success : function(obj) {
-	    if (obj.status) {
-	     callback(obj.imgsrc);
-	    } else{
-			options.fileUploadError("server-internal-exception",obj.message);
-		}
+  	    if (obj.status) {
+  	     callback(obj.imgsrc);
+  	    } else{
+    			// options.fileUploadError("server-internal-exception",obj.message);
+    			alert('error');
+    		}
 	   },
-	   error : function() {
-	    options.fileUploadErroe("upload-failure", "");
+	   error : function(obj) {
+			//options.fileUploadErroe("upload-failure", "");
+			alert('error');
 	   }
 	  });
 	}
