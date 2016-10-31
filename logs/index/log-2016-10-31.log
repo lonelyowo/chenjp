@@ -1,0 +1,4 @@
+ERROR - 2016-10-31 16:57:34 --> Severity: Notice --> Undefined variable: _FILE C:\wamp\www\chenjp\app\index\controllers\Upload.php 14
+ERROR - 2016-10-31 17:44:44 --> Severity: Notice --> Undefined variable: _FILE C:\wamp\www\chenjp\app\index\controllers\Upload.php 14
+ERROR - 2016-10-31 17:47:37 --> Severity: Notice --> Undefined variable: _FILE C:\wamp\www\chenjp\app\index\controllers\Upload.php 14
+ERROR - 2016-10-31 17:51:09 --> Severity: Notice --> Undefined variable: _FILE C:\wamp\www\chenjp\app\index\controllers\Upload.php 14

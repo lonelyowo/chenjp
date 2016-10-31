@@ -20,4 +20,21 @@ class Index extends CI_Controller {
 	{
 	}
 
+	// 接口定义页面
+	public function define_api()
+	{
+		$this->load->view('define_api.html');
+	}
+
+	// 文章管理
+	public function article()
+	{
+		$this->load->view('article.html');
+	}
+
+	public function add_article()
+	{
+		$this->load->view('article_edit.html');
+	}
+
 }

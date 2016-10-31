@@ -39,74 +39,45 @@
 
       
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">控制面板</h1>
-          <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="<?php echo base_url('static/index/img/1.jpg'); ?>" data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="<?php echo base_url('static/index/img/2.jpg'); ?>" data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="<?php echo base_url('static/index/img/3.jpg'); ?>" data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="<?php echo base_url('static/index/img/4.jpg'); ?>" data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-          </div>
+          
+          <a class="btn btn-danger" href="<?php echo site_url('Index/add_article'); ?>" role="button">添加文章</a>
+          <a class="btn btn-warning" href="<?php echo site_url('Index/add_article'); ?>" role="button">修改文章</a>
+          
+          <hr>
 
-          <h2 class="sub-header">管理列表</h2>
           <div class="table-responsive">
-            <table class="table table-striped">
+            <table class="table table-bordered table-striped table-hover">
+              
               <thead>
-                <!-- <tr>
+                <tr>
                   <th>#</th>
                   <th>Header</th>
                   <th>Header</th>
                   <th>Header</th>
                   <th>Header</th>
-                </tr> -->
-                <tr>
-                  <th>ID</th>
-                  <th>账号</th>
-                  <th>密码</th>
-                  <th>地址</th>
-                  <th>描述</th>
-                  <th>详情</th>
                 </tr>
               </thead>
 
               <tbody>
-                <!-- <tr>
+                <tr>
                   <td>1,001</td>
                   <td>Lorem</td>
                   <td>ipsum</td>
                   <td>dolor</td>
                   <td>sit</td>
-                </tr> -->
-
-                <?php foreach ($data as $key => $row) : ?>
-                <tr>
-                  <td><?php echo $row['id']; ?></td>
-                  <td><?php echo $row['name']; ?></td>
-                  <td><?php echo $row['password']; ?></td>
-                  <td><a target="_blank" href="<?php echo $row['addr']; ?>"><?php echo $row['addr']; ?></a></td>
-                  <td><?php echo $row['description']; ?></td>
-                  <td><a href="">查看</a></td>
                 </tr>
-                <?php endforeach; ?>
-
+                <tr>
+                  <td>1,001</td>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+                  <td>dolor</td>
+                  <td>sit</td>
+                </tr>
               </tbody>
+            
             </table>
           </div>
+
         </div>
 
 
