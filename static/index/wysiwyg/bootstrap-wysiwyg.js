@@ -21,18 +21,18 @@
 	   url : action,
 	   secureurl : false,
 	   fileElementId : id,
-	   dataType : 'json',
-	   success : function(obj) {
-  	    if (obj.status) {
-  	     callback(obj.imgsrc);
+	   dataType : 'text',
+	   success : function(imgsrc) {
+  	    if (imgsrc) {
+  	      callback(imgsrc);
   	    } else{
     			// options.fileUploadError("server-internal-exception",obj.message);
-    			alert('error');
+    			alert('success-图片上传失败');
     		}
 	   },
-	   error : function(obj) {
+	   error : function() {
 			//options.fileUploadErroe("upload-failure", "");
-			alert('error');
+			alert('error-图片上传失败');
 	   }
 	  });
 	}
@@ -116,7 +116,7 @@
 						}).fail(function (e) {
 							options.fileUploadError("file-reader", e);
 						});*/
-            uploadFileToServer(id, action, function(src) {
+						uploadFileToServer(id, action, function(src) {
               execCommand('insertimage', src);
             });
 

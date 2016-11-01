@@ -11,30 +11,41 @@ class Index extends CI_Controller {
 
 	public function index()
 	{
+		$data['sidebar_active']['index'] = 'active';
         $data['data'] = $this->Index_model->get_account();
-        // var_dump($data['data']);exit();
 		$this->load->view('pwd.html',$data);
-	}
-
-	public function test()
-	{
 	}
 
 	// 接口定义页面
 	public function define_api()
 	{
-		$this->load->view('define_api.html');
+		$data['sidebar_active']['define_api'] = 'active';
+		$this->load->view('define_api.html', $data);
 	}
 
 	// 文章管理
 	public function article()
 	{
-		$this->load->view('article.html');
+		$data['sidebar_active']['article'] = 'active';
+		$data['data'] = $this->Index_model->get_article();
+		$this->load->view('article.html', $data);
 	}
 
 	public function add_article()
 	{
 		$this->load->view('article_edit.html');
+	}
+
+	public function article_del($id)
+	{
+		$this->db->delete('article', array('id' => $id));
+		redirect( site_url('Index/article') );
+	}
+
+	public function article_detail($id)
+	{
+		$data['data'] = $this->Index_model->get_detail_article($id);
+		$this->load->view('article_detail.html', $data);
 	}
 
 }

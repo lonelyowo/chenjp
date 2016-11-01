@@ -7,8 +7,6 @@
     <meta name="keywords" content="opensource rich wysiwyg text editor jquery bootstrap execCommand html5" />
     <meta name="description" content="This tiny jQuery Bootstrap WYSIWYG plugin turns any DIV into a HTML5 rich text editor" />
     
-    <!-- <link rel="apple-touch-icon" href="http://mindmup.s3.amazonaws.com/lib/img/apple-touch-icon.png" /> -->
-    <!-- <link rel="shortcut icon" href="http://mindmup.s3.amazonaws.com/lib/img/favicon.ico" > -->
     <link href="<?php echo base_url('static/index/wysiwyg/external/google-code-prettify/prettify.css'); ?>" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url('static/index/wysiwyg/bootstrap-combined.no-icons.min.css'); ?>">
     <link href="http://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
@@ -22,9 +20,6 @@
     <script src="http://cdn.bootcss.com/bootstrap/2.3.1/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url('static/index/wysiwyg/external/google-code-prettify/prettify.js'); ?>"></script>
     <script src="<?php echo base_url('static/index/wysiwyg/bootstrap-wysiwyg.js'); ?>"></script>
-  
-
-    
 
   </head>
 
@@ -37,7 +32,13 @@
           <small>文章编辑</small>
         </h1>
         <hr/> -->
-    	
+    	 
+        <label for="title"><h4>文章标题</h4></label>
+        <input type="text" class="form-control" id="title" placeholder="输入文章标题">
+
+        <br>
+        <br>
+        <h4>文章内容</h4>
         <div id="alerts"></div>
         <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
           <div class="btn-group">
@@ -95,7 +96,7 @@
         </div>
         <div id="editor"></div>
 
-        <br>
+        <hr>
         
         <button id="submit" type="button" class="btn btn-info">确认提交</button>
 
@@ -147,12 +148,23 @@
     <script>
       $(function(){
         $('#submit').click(function(){
-          alert('submit');
-          var data = $('#editor').html();
-          // alert(data.attr('src'));
-          console.log(data);
+          var article = $('#editor').html();
+          var title = $('#title').val();
+          if (article && title) {
+            var data = {"title":title,"article":article};
+            var url = "<?php echo site_url('Upload/article'); ?>";
 
+            $.post(url, data, function(data){
+              if (data.status) {
+                alert(data.msg);
+              }else{
+                alert(data.msg);
+              }
+            }, "json");
 
+          }else{
+            alert('文章标题和内容不能为空');
+          }
         });
       });
     </script>

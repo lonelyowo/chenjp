@@ -19,5 +19,17 @@ class Index_model extends CI_Model {
         return $query->result_array();
     }
 
+    public function get_article(){
+        $sql = "SELECT * FROM article ORDER BY id DESC";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function get_detail_article($id){
+        $sql = "SELECT * FROM article WHERE id={$id} LIMIT 1";
+        $query = $this->db->query($sql);
+        return $query->row_array();
+    }
+
 
 }
