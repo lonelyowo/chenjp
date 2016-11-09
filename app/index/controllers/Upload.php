@@ -52,5 +52,32 @@ class Upload extends CI_Controller {
         echo json_encode($json);
     }
 
+    public function article_edit()
+    {
+        $id = $_POST['id'];
+        $title = $_POST['title'];
+        $article = $_POST['article'];
+
+        $data = array(
+            'title' => $title,
+            'content' => $article,
+        );
+       
+        $this->db->where('id', $id)->update('article', $data);
+
+        if ($this->db->affected_rows() == 1) {
+            $json = array(
+            'status'=>1,
+            'msg'=>'文章编辑成功',
+            );
+        }else{
+            $json = array(
+            'status'=>0,
+            'msg'=>'文章编辑失败',
+            );
+        }        
+        echo json_encode($json);
+    }
+
 
 }

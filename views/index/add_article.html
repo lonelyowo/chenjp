@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>编辑文章</title>
+    <title>添加文章</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keywords" content="opensource rich wysiwyg text editor jquery bootstrap execCommand html5" />
     <meta name="description" content="This tiny jQuery Bootstrap WYSIWYG plugin turns any DIV into a HTML5 rich text editor" />
@@ -31,13 +31,11 @@
           <br/> 
           <small>文章编辑</small>
         </h1>
-        <hr/> -->
-
-        <input type="hidden" id="id" value="<?php echo $data['id']; ?>">
+        <hr> -->
     	 
         <label for="title"><h4>标题</h4></label>
-        <input type="text" class="form-control" id="title" placeholder="输入文章标题" value="<?php echo $data['title']; ?>" >
-
+        <input type="text" class="form-control" id="title" placeholder="输入文章标题">
+        
         <h4>内容</h4>
         <div id="alerts"></div>
         <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
@@ -94,9 +92,7 @@
           </div>
           <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="">
         </div>
-        <div id="editor">
-          <?php echo $data['content']; ?>
-        </div>
+        <div id="editor"></div>
 
         <hr>
         
@@ -150,21 +146,13 @@
     <script>
       $(function(){
         $('#submit').click(function(){
-          
-          var id = $('#id').val();
           var article = $('#editor').html();
           var title = $('#title').val();
-
-          if (id && article && title) {
-            var data = {
-              "id":id,
-              "title":title,
-              "article":article
-            };
-            var url = "<?php echo site_url('Upload/article_edit'); ?>";
+          if (article && title) {
+            var data = {"title":title,"article":article};
+            var url = "<?php echo site_url('Upload/article'); ?>";
 
             $.post(url, data, function(data){
-              
               if (data.status) {
                 // alert(data.msg);
                 window.location.href = "<?php echo site_url('Index/article'); ?>";

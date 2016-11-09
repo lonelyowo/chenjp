@@ -17,10 +17,10 @@ class Index extends CI_Controller {
 	}
 
 	// 接口定义页面
-	public function define_api()
+	public function api()
 	{
-		$data['sidebar_active']['define_api'] = 'active';
-		$this->load->view('define_api.html', $data);
+		$data['sidebar_active']['api'] = 'active';
+		$this->load->view('api.html', $data);
 	}
 
 	// 文章管理
@@ -33,7 +33,7 @@ class Index extends CI_Controller {
 
 	public function add_article()
 	{
-		$this->load->view('article_edit.html');
+		$this->load->view('add_article.html');
 	}
 
 	public function article_del($id)
@@ -47,5 +47,13 @@ class Index extends CI_Controller {
 		$data['data'] = $this->Index_model->get_detail_article($id);
 		$this->load->view('article_detail.html', $data);
 	}
+
+	// 文章修改
+	public function article_edit($id)
+	{
+		$data['data'] = $this->Index_model->get_detail_article($id);
+		$this->load->view('article_edit.html', $data);
+	}
+
 
 }

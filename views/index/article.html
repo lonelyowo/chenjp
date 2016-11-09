@@ -66,6 +66,7 @@
                     <td><?php echo date('Y-m-d H:i:s',$row['time']); ?></td>
                     <td>
                       <a class="btn btn-success" href="<?php echo site_url('Index/article_detail/'.$row['id']); ?>" role="button">查看</a>
+                      <a class="btn btn-info" href="<?php echo site_url('Index/article_edit/'.$row['id']); ?>" role="button">编辑</a>
                       <a class="article_del btn btn-danger" data-href="<?php echo site_url('Index/article_del/'.$row['id']); ?>" href="JavaScript:;" role="button">删除</a>
                     </td>
                   </tr>

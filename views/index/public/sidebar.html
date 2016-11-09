@@ -1,19 +1,16 @@
 <div class="col-sm-3 col-md-2 sidebar">
   <ul class="nav nav-sidebar">
-    <li class="<?php echo isset($sidebar_active['index'])?$sidebar_active['index']:''; ?>"><a href="<?php echo site_url('Index/index'); ?>">控制面板</a></li>
+    <li class="<?php echo isset($sidebar_active['index'])?$sidebar_active['index']:''; ?>"><a href="<?php echo site_url('Index/index'); ?>">我的主页</a></li>
   </ul>
 
   <ul class="nav nav-sidebar">
     <li class="<?php echo isset($sidebar_active['article'])?$sidebar_active['article']:''; ?>"><a href="<?php echo site_url('Index/article'); ?>">文章管理</a></li>
-    <li class="<?php echo isset($sidebar_active['define_api'])?$sidebar_active['define_api']:''; ?>"><a href="<?php echo site_url('Index/define_api'); ?>">接口定义</a></li>
-    <li><a href="">One more nav</a></li>
-    <li><a href="">Another nav item</a></li>
-    <li><a href="">More navigation</a></li>
+    <li class="<?php echo isset($sidebar_active['api'])?$sidebar_active['api']:''; ?>"><a href="<?php echo site_url('Index/api'); ?>">接口管理</a></li>
   </ul>
 
-  <ul class="nav nav-sidebar">
+  <!-- <ul class="nav nav-sidebar">
     <li><a href="">Nav item again</a></li>
     <li><a href="">One more nav</a></li>
     <li><a href="">Another nav item</a></li>
-  </ul>
+  </ul> -->
 </div>
