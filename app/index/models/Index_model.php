@@ -1,4 +1,5 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
  * Created by PhpStorm.
@@ -17,6 +18,29 @@ class Index_model extends CI_Model {
         $sql = "SELECT * FROM account";
         $query = $this->db->query($sql);
         return $query->result_array();
+    }
+
+    public function user(){
+        $sql = "SELECT * FROM user ORDER BY id DESC";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function menu_permission()
+    {
+        $sql = "SELECT * FROM menu_permission ORDER BY id DESC";
+        return $this->db->query($sql)->result_array();
+    }
+
+
+    public function get_api(){
+        $sql = "SELECT * FROM api ORDER BY id DESC";
+        return $this->db->query($sql)->result_array();
+    }
+
+    public function get_api_detail($id){
+        $sql = "SELECT * FROM api WHERE id={$id} LIMIT 1";
+        return $this->db->query($sql)->row_array();
     }
 
     public function get_article(){

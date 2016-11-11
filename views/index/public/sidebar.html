@@ -1,11 +1,16 @@
 <div class="col-sm-3 col-md-2 sidebar">
   <ul class="nav nav-sidebar">
-    <li class="<?php echo isset($sidebar_active['index'])?$sidebar_active['index']:''; ?>"><a href="<?php echo site_url('Index/index'); ?>">我的主页</a></li>
+    <li class="<?php echo isset($sidebar_active['index'])?$sidebar_active['index']:''; ?>"><a href="<?php echo site_url('Index/index'); ?>">个人中心</a></li>
   </ul>
 
   <ul class="nav nav-sidebar">
     <li class="<?php echo isset($sidebar_active['article'])?$sidebar_active['article']:''; ?>"><a href="<?php echo site_url('Index/article'); ?>">文章管理</a></li>
-    <li class="<?php echo isset($sidebar_active['api'])?$sidebar_active['api']:''; ?>"><a href="<?php echo site_url('Index/api'); ?>">接口管理</a></li>
+    <li class="<?php echo isset($sidebar_active['api'])?$sidebar_active['api']:''; ?>"><a href="<?php echo site_url('Index/api'); ?>">API管理</a></li>
+  </ul>
+
+
+  <ul class="nav nav-sidebar">
+    <li class="<?php echo isset($sidebar_active['user'])?$sidebar_active['user']:''; ?>"><a href="<?php echo site_url('Index/user'); ?>">用户管理</a></li>
   </ul>
 
   <!-- <ul class="nav nav-sidebar">
