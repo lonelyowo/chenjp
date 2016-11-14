@@ -75,7 +75,7 @@
             <div class="form-group">
               <label for="data" class="col-sm-1 control-label">data:</label>
               <div class="col-sm-10">
-                <textarea id="data" class="form-control" rows="15" placeholder="接口数据"><?php echo json_encode($json['data']); ?></textarea>
+                <textarea id="data" class="form-control" rows="15" placeholder="接口数据"><?php echo json_encode($json['data'], JSON_UNESCAPED_UNICODE); ?></textarea>
                 <hr>
               </div>
             <div>
