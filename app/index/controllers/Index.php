@@ -165,6 +165,7 @@ class Index extends CI_Controller {
 		$data['sidebar_active']['Index/api'] = 'active';
 		$data['data'] = $this->Index_model->get_api_detail($id);
 		$data['json'] = json_decode($data['data']['json'], true);
+		// var_dump($data['json']);exit();
 		$this->load->view('api/edit.html', $data);
 	}
 	
