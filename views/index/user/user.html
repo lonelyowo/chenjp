@@ -40,7 +40,7 @@
       
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           
-          <a class="btn btn-danger" href="#" role="button">添加用户</a>
+          <a class="btn btn-danger" href="<?php echo site_url('Index/user_add'); ?>" role="button">添加用户</a>
           
           <hr>
 
@@ -69,7 +69,9 @@
                     <td><?php echo $row['identity']; ?></td>
                     <td><?php echo date('Y-m-d H:i:s',$row['time']); ?></td>
                     <td>
-                      <a class="btn btn-info" href="<?php echo site_url('Index/user_permission/'.$row['id']); ?>" role="button">权限管理</a>
+                      <?php if ($row['identity']!='root') :?>
+                        <a class="btn btn-info" href="<?php echo site_url('Index/user_permission/'.$row['id']); ?>" role="button">权限管理</a>
+                      <?php endif; ?>
                     </td>
                   </tr>
                   <?php endforeach; ?>

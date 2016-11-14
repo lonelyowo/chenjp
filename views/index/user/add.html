@@ -40,49 +40,36 @@
       
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           
-          <!-- <a class="btn btn-danger" href="#" role="button">添加用户</a>
-          
-          <hr> -->
-
-          <div class="table-responsive">
-            <table class="table table-bordered table-striped table-hover">
-              
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>ID</th>
-                  <th>菜单名</th>
-                  <th>URL</th>
-                </tr>
-              </thead>
-
-              <tbody>
-      
-                <?php if ($data) : ?>
-                
-                  <form action="<?php echo site_url('Index/user_permission_bll'); ?>" method="post">  
-
-                    <?php foreach ($data as $row) : ?>
-                    <tr>
-                      <td>
-                        <input type="checkbox" name="menu_id_list[]" value="<?php echo $row['id']; ?>" <?php echo isset($menu_permission[$row['id']])?'checked':''; ?> >
-                      </td>
-                      <td><?php echo $row['id']; ?></td>
-                      <td><?php echo $row['name']; ?></td>
-                      <td><?php echo $row['url']; ?></td>
-                    </tr>
-                    <?php endforeach; ?>
-                
-                <?php endif; ?>
-                
-              </tbody>
+          <form class="form-horizontal" role="form" method="post" action="<?php echo site_url('Index/user_add_bll'); ?>">
             
-            </table>
-          </div>
-                    <input type="hidden" name="userid" value="<?php echo $userid; ?>">
-                    <button type="submit" class="btn btn-danger">提交</button>
-                  </form>
+            <div class="form-group">
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="username" placeholder="用户名" value="">
+              </div>
+            </div>
 
+            <div class="form-group">
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="password" placeholder="密码" value="">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="identity" placeholder="身份 {超级管理员:root} {普通用户:user}" value="">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-10">
+                <button type="submit" class="btn btn-danger">提交</button>
+              </div>
+            </div>
+          
+          </form>
+
+
+          
         </div>
 
 
@@ -98,19 +85,9 @@
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="http://v3.bootcss.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    
   
-    <script>
-      $(function(){
-        // $('.article_del').click(function(){
-        //   var url = $(this).attr('data-href');
-        //   if ( confirm("确定删除此文章？") ){    
-        //     window.location.href = url;
-        //   }
-        // });
-
-
-      });
-    </script>
 
   </body>
 </html>
